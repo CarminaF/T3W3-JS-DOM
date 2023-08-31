@@ -6,7 +6,7 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="./style.css">
-    <script src="./script.js"></script>
+
 </head>
 <body>
     <h1>Welcome!</h1>
@@ -14,13 +14,47 @@
     <hr />
     <br />
 
+    <h2>(Real form)</h2>
+    <form>
+        <label for="">New item</label>
+        <input type="text" id="real-nameinput"/>
+        <h6 id="'real-texthint">Not sure what to write? Check IMBD!</h6>
+        <button 
+            onclick="addItemToList(event, 'real-nameinput')" 
+            id="real-formsubmit">
+            Submit new item
+        </button>
+    </form>
+    <hr />
+
+    <h2>(Pseudo form)</h2>
+    <p>New Item:</p>
+    <input type="text" id="pseudo-nameinput">
+    <h6 id="pseudo-formsubmit">Not sure what to write? Use a form!</h6>
+    <button id="pseudo-formsubmit">Submit New Item</button>
+    <hr />
+
     <h2>Favourite Media</h2>
     <ul id="mediaList">
         
     </ul>
+
+    <button onclick="changeCSSTheme('dark')">
+        Change theme to dark
+    </button>
+    <button onclick="changeCSSTheme('light')">
+        Change theme to light
+    </button>
+    <button onclick="toggleLightDark()">
+        Toggle light/dark
+    </button>
+    
+    <script src="./script.js"></script>
+    <script src="./themeControl.js"></script>
     <script>
         exampleHello();
         createListOfMedia();
+        changeCSSTheme("dark");
     </script>
 </body>
 </html>
