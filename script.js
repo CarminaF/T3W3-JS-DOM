@@ -60,12 +60,12 @@ function removeItemFromList(targetItem){
     };
 }
 
-function addItemToList(event) {
+function addItemToList(event, targetID) {
     event.preventDefault();
 
     console.log("we tried to add an item to the list!");
 
-    let realInputField = document.getElementById("real-nameinput");
+    let realInputField = document.getElementById(targetID);
     let newItemName = realInputField.value;
     if(newItemName){
         console.log("newItemName is :" + newItemName);
@@ -94,6 +94,7 @@ function inputHelperOnFocus(targetId) {
 
 function inputHelperOnBlur(targetId) {
     let helperElement = document.getElementById(targetId);
+    console.log("hiding text hint now");
     helperElement.style.display = "none";
 }
 
